@@ -13,10 +13,14 @@
       
       const width = 500;
       const height = 500;
-      
+        
       const widthScale = d3.scaleLinear()
                          .domain([0, 60])
                          .range([0, width]);
+                         
+      const colorScale = d3.scaleLinear()
+                         .domain([0, 60])
+                         .range(["blue", "green"])
                          
       const canvas = d3.select("body")
                     .append("svg")
@@ -29,6 +33,7 @@
                       .append("rect")
                       .attr("width", function(d) { return widthScale(d); })
                       .attr("height", 50)
+                      .attr("fill", function(d) { return colorScale(d); })
                       .attr("y", function(d, i) { return i * 80 });
       
     </script>
