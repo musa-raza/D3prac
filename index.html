@@ -3,8 +3,27 @@
   <head>
     <meta charset="utf-8">
     <title>D3 practice</title>
+    <script src="https://d3js.org/d3.v4.js"></script>
   </head>
   <body>
     <p>Hello</p>
+    <script>
+    
+      const array = [20, 40, 50];
+      
+      const canvas = d3.select("body")
+                    .append("svg")
+                    .attr("width", 500)
+                    .attr("height", 500);
+      
+      const bars = canvas.selectAll("rect")
+                   .data(array)
+                   .enter()
+                      .append("rect")
+                      .attr("width", function(d) { return d * 10})
+                      .attr("height", 50)
+                      .attr("y", function(d, i) { return i * 80 });
+      
+    </script>
   </body>
 </html>
