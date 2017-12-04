@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>D3 practice</title>
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="./rand.js">
+
+    </script>
+  </head>
+  <body>
+    <p>More</p>
+    <script>
+
+    const data = [10, 20];
+
+    const canvas = d3.select("body")
+                    .append("svg")
+                    .attr("width", 500)
+                    .attr("height", 500)
+
+    const circle = canvas.append("circle")
+                     .attr("cx", 50)
+                     .attr("cy", 100)
+                     .attr("r", 25);
+
+    const circles = canvas.selectAll("circle")
+                    .data(data)
+                    .enter()
+                        .append("circle")
+                        .attr("cx", 50)
+                        .attr("cy", 50)
+                        .attr("r", 25)
+    </script>
+  </body>
+</html>
