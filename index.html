@@ -22,7 +22,8 @@
                          .domain([0, 60])
                          .range(["black", "grey"])
 
-      const axis = d3.axisBottom(widthScale);
+      const axis = d3.axisBottom(widthScale)
+                    .ticks(5);
 
       const canvas = d3.select("body")
                     .append("svg")
