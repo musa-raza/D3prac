@@ -4,15 +4,13 @@
     <meta charset="utf-8">
     <title>D3 practice</title>
     <script src="https://d3js.org/d3.v4.js"></script>
-    <script src="./rand.js">
 
-    </script>
   </head>
   <body>
     <p>More</p>
     <script>
 
-    const data = [10, 20];
+    const data = [10];
 
     const canvas = d3.select("body")
                     .append("svg")
@@ -21,16 +19,15 @@
 
     const circle = canvas.append("circle")
                      .attr("cx", 50)
-                     .attr("cy", 100)
+                     .attr("cy", 50)
                      .attr("r", 25);
 
-    const circles = canvas.selectAll("circle")
-                    .data(data)
-                    .enter()
-                        .append("circle")
-                        .attr("cx", 50)
-                        .attr("cy", 50)
-                        .attr("r", 25)
+    circle.transition()
+        .duration(5000)
+        .delay(1000)
+        .attr("cy", 475)
+        .attr("cx", 475)
+        .each("end", function() { d3.select(this).attr("fill", "red"); })
     </script>
   </body>
 </html>
